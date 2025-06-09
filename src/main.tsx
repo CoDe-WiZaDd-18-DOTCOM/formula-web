@@ -10,7 +10,7 @@ createRoot(document.getElementById("root")!).render(
       clientId={Client} 
       authorizationParams={{
         redirect_uri: "https://formula-web-seven.vercel.app/", 
-        audience: "https://dev-sfiofywscwujl5yh.us.auth0.com/api/v2/",
+        audience: "https://dev-kchfcftesqkpdp2z.us.auth0.com/api/v2/",
       }}
       cacheLocation="localstorage"
     >
