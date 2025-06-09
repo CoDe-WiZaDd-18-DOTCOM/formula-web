@@ -121,7 +121,7 @@ const Landing = () => {
                   variant="outline"
                   className="border-violet-300 text-violet-700 hover:bg-violet-50 px-8 py-6"
                   onClick={() =>
-                    (window.location.href = "http://localhost:8080/forms")
+                    (window.location.href = "https://formula-web-seven.vercel.app/forms")
                   }
                 >
                   Build Form
