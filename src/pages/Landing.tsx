@@ -182,7 +182,7 @@ const Landing = () => {
                 <div
                   key={form.id}
                   className="bg-white p-6 rounded-lg shadow hover:shadow-xl cursor-pointer transition-all"
-                  onClick={() => window.location.href = `http://localhost:8080/form/id/${form.id}`}
+                  onClick={() => window.location.href = `https://formula-web-seven.vercel.app/form/id/${form.id}`}
                 >
                   <h3 className="text-xl font-semibold text-violet-700">{form.title}</h3>
                   <p className="text-gray-600 mt-2">{form.description || "No description provided."}</p>
