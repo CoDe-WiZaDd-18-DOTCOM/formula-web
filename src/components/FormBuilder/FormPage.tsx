@@ -44,7 +44,7 @@ export const FormPage: React.FC<FormPageProps> = ({ pageIndex }) => {
     };
 
     try {
-      const response = await axios.post('http://localhost:5002/public/forms', formTemplate);
+      const response = await axios.post('https://formula-748c.onrender.com/public/forms', formTemplate);
       console.log('Form submitted:', response.data);
       alert('Form submitted successfully!');
     } catch (error) {

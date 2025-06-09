@@ -29,7 +29,7 @@ export const FormBuilder: React.FC = () => {
 
   useEffect(() => {
     if (currentTab === 'publish') {
-      axios.get(`http://localhost:5002/public/forms/${user.sub}`)
+      axios.get(`https://formula-748c.onrender.com/public/forms/${user.sub}`)
         .then(res => {
           if (Array.isArray(res.data)) {
             setForms(res.data);
@@ -50,7 +50,7 @@ export const FormBuilder: React.FC = () => {
   };
 
   const downloadResponses = (formId: string) => {
-    window.open(`http://localhost:5002/public/form-responses/${formId}/csv`, '_blank');
+    window.open(`https://formula-748c.onrender.com/public/form-responses/${formId}/csv`, '_blank');
   };
 
   const renderTabContent = () => {

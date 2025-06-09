@@ -17,7 +17,7 @@ const FillFormPage = () => {
   useEffect(() => {
     const fetchForm = async () => {
       try {
-        const res = await axios.get(`http://localhost:5002/public/forms/id/${formId}`);
+        const res = await axios.get(`https://formula-748c.onrender.com/public/forms/id/${formId}`);
         setForm(res.data);
 
         // Make all fields visible initially
@@ -135,7 +135,7 @@ const FillFormPage = () => {
           answers: formattedAnswers,
         };
         
-        const response = await axios.post('http://localhost:5002/public/form-responses', payload, {
+        const response = await axios.post('https://formula-748c.onrender.com/public/form-responses', payload, {
         headers: {
           'Content-Type': 'application/json',
         },
