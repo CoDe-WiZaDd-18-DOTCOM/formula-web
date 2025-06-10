@@ -7,6 +7,7 @@ import { ShowHideField } from '../Conditions/ShowHideField';
 import { SkipToHidePage } from '../Conditions/SkipToHidePage';
 import { useAuth0 } from '@auth0/auth0-react';
 import axios from 'axios';
+import {PublishRoute,DownloadRoute, CLIENT_BASE, CLIENT_BASE_2} from '../../apis'
 
 export const FormBuilder: React.FC = () => {
   const { 
@@ -29,7 +30,7 @@ export const FormBuilder: React.FC = () => {
 
   useEffect(() => {
     if (currentTab === 'publish') {
-      axios.get(`https://formula-748c.onrender.com/public/forms/${user.sub}`)
+      axios.get(`${PublishRoute}/${user.sub}`)
         .then(res => {
           if (Array.isArray(res.data)) {
             setForms(res.data);
@@ -50,7 +51,7 @@ export const FormBuilder: React.FC = () => {
   };
 
   const downloadResponses = (formId: string) => {
-    window.open(`https://formula-748c.onrender.com/public/form-responses/${formId}/csv`, '_blank');
+    window.open(`${DownloadRoute}/${formId}/csv`, '_blank');
   };
 
   const renderTabContent = () => {
@@ -204,7 +205,7 @@ export const FormBuilder: React.FC = () => {
         <header className="bg-violet-600 shadow-sm">
           <div className="flex justify-between items-center px-4 py-3 container mx-auto">
             <div className="flex items-center space-x-4">
-              <a href="https://formula-web-seven.vercel.app/">
+              <a href={CLIENT_BASE_2}>
                 <div className="text-xl font-bold text-white cursor-pointer">Formula</div>
               </a>
               <div className="text-sm font-semibold px-2 py-1 border border-violet-300 text-white rounded-md">Form Builder</div>
@@ -255,6 +256,7 @@ export const FormBuilder: React.FC = () => {
             </button>
           </div>
         )}
+
 
         {renderTabContent()}
       </div>

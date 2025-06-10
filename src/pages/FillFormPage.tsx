@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useAuth0 } from '@auth0/auth0-react';
+import { DownloadRoute, PublishRoute } from '@/apis';
 
 
 const FillFormPage = () => {
@@ -17,7 +18,7 @@ const FillFormPage = () => {
   useEffect(() => {
     const fetchForm = async () => {
       try {
-        const res = await axios.get(`https://formula-748c.onrender.com/public/forms/id/${formId}`);
+        const res = await axios.get(`${PublishRoute}/id/${formId}`);
         setForm(res.data);
 
         // Make all fields visible initially
@@ -135,7 +136,7 @@ const FillFormPage = () => {
           answers: formattedAnswers,
         };
         
-        const response = await axios.post('https://formula-748c.onrender.com/public/form-responses', payload, {
+        const response = await axios.post(DownloadRoute, payload, {
         headers: {
           'Content-Type': 'application/json',
         },

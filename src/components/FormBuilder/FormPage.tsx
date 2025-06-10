@@ -3,6 +3,7 @@ import { FormElement } from './FormElement';
 import { useFormBuilder } from '@/context/FormBuilderContext';
 import axios from 'axios';
 import { useAuth0 } from '@auth0/auth0-react';
+import { PublishRoute } from '@/apis';
 
 interface FormPageProps {
   pageIndex: number;
@@ -44,7 +45,7 @@ export const FormPage: React.FC<FormPageProps> = ({ pageIndex }) => {
     };
 
     try {
-      const response = await axios.post('https://formula-748c.onrender.com/public/forms', formTemplate);
+      const response = await axios.post(PublishRoute, formTemplate);
       console.log('Form submitted:', response.data);
       alert('Form submitted successfully!');
     } catch (error) {

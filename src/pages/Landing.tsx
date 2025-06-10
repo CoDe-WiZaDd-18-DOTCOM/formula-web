@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { useAuth0 } from "@auth0/auth0-react";
 import useAuthCheck from "../hooks/useAuthCheck";
-import { SignUpRoute, FormsRoute } from '@/apis';
+import { SignUpRoute, FormsRoute, CLIENT_BASE } from '@/apis';
 import axios from "axios";
 
 const Landing = () => {
@@ -121,7 +121,7 @@ const Landing = () => {
                   variant="outline"
                   className="border-violet-300 text-violet-700 hover:bg-violet-50 px-8 py-6"
                   onClick={() =>
-                    (window.location.href = "https://formula-web-seven.vercel.app/forms")
+                    (window.location.href = `${CLIENT_BASE}/forms`)
                   }
                 >
                   Build Form
@@ -182,7 +182,7 @@ const Landing = () => {
                 <div
                   key={form.id}
                   className="bg-white p-6 rounded-lg shadow hover:shadow-xl cursor-pointer transition-all"
-                  onClick={() => window.location.href = `https://formula-web-seven.vercel.app/form/id/${form.id}`}
+                  onClick={() => window.location.href = `${CLIENT_BASE}/form/id/${form.id}`}
                 >
                   <h3 className="text-xl font-semibold text-violet-700">{form.title}</h3>
                   <p className="text-gray-600 mt-2">{form.description || "No description provided."}</p>
