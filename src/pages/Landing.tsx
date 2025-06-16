@@ -138,7 +138,7 @@ const Landing = () => {
           </div>
         </div>
 
-        <div className="py-16">
+        {/* <div className="py-16">
           <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
             How would you like to start?
           </h2>
@@ -172,7 +172,7 @@ const Landing = () => {
               </p>
             </Link>
           </div>
-        </div>
+        </div> */}
 
         {isAuthenticated && forms.length > 0 && (
           <div className="py-16">
